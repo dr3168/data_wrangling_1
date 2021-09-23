@@ -44,4 +44,18 @@ litters_data = read_csv(file = "./FAS_litters.csv",
     `Pups survive` = col_integer()
   )
 )
-  ```
+```
+  
+```{r}
+library(tidyverse)
+```
+```{r}
+mlb11_df= readxl::read_excel("mlb11.xlsx")
+```
+#Read a SAS file
+```{r}
+library(haven)
+```
+```{r}
+pulse_df=read_sas("public_pulse_data.sas7bdat")
+```
