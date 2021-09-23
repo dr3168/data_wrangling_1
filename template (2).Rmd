@@ -1,7 +1,8 @@
 ---
 title: "Simple document"
-output: html_document
+output: github_document
 ---
+
 
 I'm an R Markdown document! 
 
@@ -10,12 +11,20 @@ I'm an R Markdown document!
 Here's a **code chunk** that samples from 
 a _normal distribution_:
 
-```{r}
-samp = rnorm(100)
-length(samp)
+```{r, echo= FALSE, message=FALSE}
+library(tidyverse)
 ```
 
-# Section 2
+## Import some data
 
-I can take the mean of the sample, too!
-The mean is `r mean(samp)`.
+I want to import `FAS_litters.csv`
+```{r}
+litters_df=read_csv("data_import_examples/FAS_litters.csv")
+```
+```{r}
+names(litters_df)
+litters_df=janitor:: clean_names(litters_df)
+```
+```{r}
+litters_df
+```
